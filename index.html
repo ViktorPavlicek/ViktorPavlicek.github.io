@@ -49,38 +49,17 @@
   .nav-links a:hover{color:var(--ink);}
   .nav-cta{border:1px solid var(--line);padding:8px 16px;border-radius:6px;color:var(--ink)!important;}
   .nav-cta:hover{border-color:var(--indigo);color:var(--violet-light)!important;}
-
-  /* Language dropdown */
   .lang-switch{position:relative;display:flex;align-items:center;flex-shrink:0;}
-  .lang-switch select{
-    appearance:none;-webkit-appearance:none;
-    height:36px;padding:0 26px 0 12px;
-    border:1px solid var(--line);border-radius:8px;
-    background:var(--navy-surface);color:var(--ink);
-    font-family:var(--font-mono);font-size:.8rem;font-weight:600;letter-spacing:.04em;
-    cursor:pointer;transition:border-color .2s ease,background .2s ease,color .2s ease;
-  }
+  .lang-switch select{appearance:none;-webkit-appearance:none;height:36px;padding:0 26px 0 12px;border:1px solid var(--line);border-radius:8px;background:var(--navy-surface);color:var(--ink);font-family:var(--font-mono);font-size:.8rem;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:border-color .2s ease,background .2s ease,color .2s ease;}
   .lang-switch select:hover,.lang-switch select:focus-visible{border-color:var(--indigo);outline:none;}
-  .lang-switch::after{
-    content:"";position:absolute;right:10px;top:50%;
-    width:6px;height:6px;
-    border-right:1.5px solid var(--slate);border-bottom:1.5px solid var(--slate);
-    transform:translateY(-65%) rotate(45deg);pointer-events:none;
-  }
-
-  /* Theme toggle */
-  .theme-toggle{
-    position:relative;width:36px;height:36px;display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--line);border-radius:8px;background:var(--navy-surface);color:var(--ink);
-    cursor:pointer;transition:border-color .2s ease,background .2s ease;flex-shrink:0;
-  }
+  .lang-switch::after{content:"";position:absolute;right:10px;top:50%;width:6px;height:6px;border-right:1.5px solid var(--slate);border-bottom:1.5px solid var(--slate);transform:translateY(-65%) rotate(45deg);pointer-events:none;}
+  .theme-toggle{position:relative;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:8px;background:var(--navy-surface);color:var(--ink);cursor:pointer;transition:border-color .2s ease,background .2s ease;flex-shrink:0;}
   .theme-toggle:hover{border-color:var(--indigo);}
   .theme-toggle svg{position:absolute;width:17px;height:17px;transition:opacity .25s ease,transform .25s ease;}
   .theme-toggle .icon-moon{opacity:1;transform:scale(1) rotate(0deg);}
   .theme-toggle .icon-sun{opacity:0;transform:scale(.6) rotate(-90deg);}
   html[data-theme="light"] .theme-toggle .icon-moon{opacity:0;transform:scale(.6) rotate(90deg);}
   html[data-theme="light"] .theme-toggle .icon-sun{opacity:1;transform:scale(1) rotate(0deg);}
-
   .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
   .nav-toggle span{width:22px;height:2px;background:var(--ink);display:block;transition:transform .25s ease,opacity .25s ease;}
 
@@ -91,11 +70,14 @@
   .accent-text{background:linear-gradient(95deg,var(--violet-light),var(--indigo));-webkit-background-clip:text;background-clip:text;color:transparent;}
   .hero-lead{color:var(--slate);font-size:1.08rem;max-width:46ch;margin-bottom:36px;}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{display:inline-flex;align-items:center;padding:13px 24px;border-radius:7px;font-size:.92rem;font-weight:600;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:7px;font-size:.92rem;font-weight:600;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;}
   .btn-primary{background:var(--indigo);color:#fff;}
   .btn-primary:hover{background:var(--violet-light);transform:translateY(-1px);}
   .btn-outline{border:1px solid var(--line);color:var(--ink);}
   .btn-outline:hover{border-color:var(--indigo);color:var(--violet-light);}
+  .btn-cv{border:1px solid var(--indigo);color:var(--violet-light);background:var(--tag-bg);}
+  .btn-cv:hover{background:var(--indigo);color:#fff;transform:translateY(-1px);}
+  .btn-cv svg{width:15px;height:15px;flex-shrink:0;}
   .hero-meta{background:var(--navy-surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:background .3s ease,border-color .3s ease;}
   .profile-photo{position:relative;width:100%;aspect-ratio:4/3;border-radius:7px;overflow:hidden;margin-bottom:24px;border:1px solid var(--line);}
   .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;filter:var(--photo-filter);}
@@ -141,6 +123,26 @@
   .site-footer{padding:32px 0;}
   .footer-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.84rem;color:var(--slate);}
 
+  /* ===== TIMELINE ===== */
+  .timeline{position:relative;padding-left:28px;margin-top:8px;}
+  .timeline::before{
+    content:"";position:absolute;left:0;top:6px;bottom:6px;
+    width:1.5px;background:linear-gradient(to bottom,var(--indigo),transparent);
+  }
+  .tl-item{position:relative;margin-bottom:40px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-dot{
+    position:absolute;left:-35px;top:5px;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--navy-deep);border:2px solid var(--indigo);
+    transition:background .25s ease;
+  }
+  .tl-item:hover .tl-dot{background:var(--indigo);}
+  .tl-period{font-family:var(--font-mono);font-size:.76rem;color:var(--violet-light);letter-spacing:.06em;margin-bottom:4px;}
+  .tl-role{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin-bottom:2px;}
+  .tl-company{font-size:.9rem;color:var(--slate);margin-bottom:8px;}
+  .tl-desc{font-size:.92rem;color:var(--slate);max-width:52ch;line-height:1.6;}
+
   @media(max-width:880px){
     .hero-grid{grid-template-columns:1fr;}
     .section-grid{grid-template-columns:1fr;gap:16px;}
@@ -150,14 +152,7 @@
   }
   @media(max-width:680px){
     .nav-toggle{display:flex;}
-    .nav-links{
-      position:absolute;top:68px;left:0;right:0;
-      background:var(--navy-deep);border-bottom:1px solid var(--line);
-      flex-direction:column;align-items:flex-start;
-      padding:20px 24px 28px;gap:18px;
-      transform:translateY(-12px);opacity:0;pointer-events:none;
-      transition:opacity .2s ease,transform .2s ease;
-    }
+    .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--navy-deep);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:20px 24px 28px;gap:18px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
     .nav-links.is-open{transform:translateY(0);opacity:1;pointer-events:auto;}
     .skills-grid{grid-template-columns:1fr;}
     .hero{padding:64px 0 56px;}
@@ -172,10 +167,11 @@
     <a href="#top" class="logo">VP<span class="logo-dot">.</span></a>
     <div class="nav-right">
       <ul class="nav-links" id="navLinks">
-        <li><a href="#o-meni"   data-i18n="nav_about">About</a></li>
-        <li><a href="#vestine"  data-i18n="nav_skills">Skills</a></li>
-        <li><a href="#projekti" data-i18n="nav_projects">Projects</a></li>
-        <li><a href="#kontakt"  data-i18n="nav_contact" class="nav-cta">Contact</a></li>
+        <li><a href="#o-meni"    data-i18n="nav_about">About</a></li>
+        <li><a href="#iskustvo"  data-i18n="nav_exp">Experience</a></li>
+        <li><a href="#vestine"   data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#projekti"  data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#kontakt"   data-i18n="nav_contact" class="nav-cta">Contact</a></li>
       </ul>
       <div class="lang-switch">
         <select id="langSelect" aria-label="Choose language">
@@ -196,6 +192,7 @@
 
 <main id="top">
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -204,7 +201,11 @@
         <p class="hero-lead" data-i18n="hero_lead">I'm Viktor, a full-stack developer based in Belgrade. I build fast, reliable web applications — from the database up to the interfaces people actually use.</p>
         <div class="hero-actions">
           <a href="#projekti" class="btn btn-primary" data-i18n="hero_btn_projects">View projects</a>
-          <a href="#kontakt"  class="btn btn-outline"  data-i18n="hero_btn_contact">Get in touch</a>
+          <a href="#kontakt"  class="btn btn-outline" data-i18n="hero_btn_contact">Get in touch</a>
+          <a href="assets/viktor-pavlicek-cv.pdf" download class="btn btn-cv" data-i18n="hero_btn_cv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
         </div>
       </div>
       <div class="hero-meta" aria-label="Profile">
@@ -221,6 +222,7 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="o-meni" class="section reveal">
     <div class="container section-grid">
       <p class="eyebrow" data-i18n="about_eyebrow">/about</p>
@@ -232,6 +234,52 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE / TIMELINE -->
+  <section id="iskustvo" class="section reveal">
+    <div class="container section-grid">
+      <p class="eyebrow" data-i18n="exp_eyebrow">/experience</p>
+      <div class="section-body">
+        <h2 data-i18n="exp_h2">Experience</h2>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-period" data-i18n="tl1_period">2023 — Present</p>
+            <h3 class="tl-role" data-i18n="tl1_role">Senior Full-stack Developer</h3>
+            <p class="tl-company" data-i18n="tl1_company">Freelance / Remote</p>
+            <p class="tl-desc" data-i18n="tl1_desc">Working independently with clients across Europe — designing systems, building APIs, and delivering production-ready web applications from spec to deployment.</p>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-period" data-i18n="tl2_period">2021 — 2023</p>
+            <h3 class="tl-role" data-i18n="tl2_role">Full-stack Developer</h3>
+            <p class="tl-company" data-i18n="tl2_company">TechCo · Belgrade</p>
+            <p class="tl-desc" data-i18n="tl2_desc">Built and maintained multiple client-facing web applications using React and Node.js. Led the migration of a legacy system to a modern microservices architecture.</p>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-period" data-i18n="tl3_period">2019 — 2021</p>
+            <h3 class="tl-role" data-i18n="tl3_role">Junior Developer</h3>
+            <p class="tl-company" data-i18n="tl3_company">Startup Studio · Belgrade</p>
+            <p class="tl-desc" data-i18n="tl3_desc">Joined a small product team building SaaS tools. Responsible for frontend development and REST API integrations. First exposure to CI/CD pipelines and Docker.</p>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-period" data-i18n="tl4_period">2015 — 2019</p>
+            <h3 class="tl-role" data-i18n="tl4_role">BSc Computer Science</h3>
+            <p class="tl-company" data-i18n="tl4_company">University of Belgrade</p>
+            <p class="tl-desc" data-i18n="tl4_desc">Graduated with a focus on software engineering and distributed systems.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
   <section id="vestine" class="section reveal">
     <div class="container">
       <p class="eyebrow" data-i18n="skills_eyebrow">/skills</p>
@@ -253,6 +301,7 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projekti" class="section reveal">
     <div class="container">
       <p class="eyebrow" data-i18n="proj_eyebrow">/projects</p>
@@ -280,6 +329,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="kontakt" class="section reveal">
     <div class="container kontakt-grid">
       <div>
@@ -314,22 +364,31 @@
 </footer>
 
 <script>
-/* ===== TRANSLATIONS ===== */
 const t = {
   en: {
-    meta_desc:          "Viktor, full-stack developer based in Belgrade. Portfolio, skills, and contact.",
-    nav_about:          "About", nav_skills:"Skills", nav_projects:"Projects", nav_contact:"Contact",
-    hero_eyebrow:       "// software engineer",
-    hero_h1:            'I build software that <span class="accent-text">solves real problems.</span>',
-    hero_lead:          "I'm Viktor, a full-stack developer based in Belgrade. I build fast, reliable web applications — from the database up to the interfaces people actually use.",
-    hero_btn_projects:  "View projects", hero_btn_contact:"Get in touch",
-    meta_role_label:    "role",     meta_role_value:   "Full-stack Developer",
-    meta_loc_label:     "location", meta_loc_value:    "Belgrade, Serbia",
-    meta_status_label:  "status",   meta_status_value: "Available for projects",
-    meta_stack_label:   "stack",
+    meta_desc:"Viktor, full-stack developer based in Belgrade. Portfolio, skills, and contact.",
+    nav_about:"About", nav_exp:"Experience", nav_skills:"Skills", nav_projects:"Projects", nav_contact:"Contact",
+    hero_eyebrow:"// software engineer",
+    hero_h1:'I build software that <span class="accent-text">solves real problems.</span>',
+    hero_lead:"I'm Viktor, a full-stack developer based in Belgrade. I build fast, reliable web applications — from the database up to the interfaces people actually use.",
+    hero_btn_projects:"View projects", hero_btn_contact:"Get in touch",
+    hero_btn_cv:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download CV',
+    meta_role_label:"role", meta_role_value:"Full-stack Developer",
+    meta_loc_label:"location", meta_loc_value:"Belgrade, Serbia",
+    meta_status_label:"status", meta_status_value:"Available for projects",
+    meta_stack_label:"stack",
     about_eyebrow:"/about", about_h2:"About",
     about_p1:"I've been building software for several years, with a focus on web applications that need to perform reliably under load. What I enjoy most is the moment a solid architecture on paper turns into a product people use every day.",
     about_p2:"I've worked both as part of small teams and independently — from the initial idea and technical spec, through development, to shipping and maintaining in production. I'm currently based in Belgrade and open to collaboration, locally or remote.",
+    exp_eyebrow:"/experience", exp_h2:"Experience",
+    tl1_period:"2023 — Present", tl1_role:"Senior Full-stack Developer", tl1_company:"Freelance / Remote",
+    tl1_desc:"Working independently with clients across Europe — designing systems, building APIs, and delivering production-ready web applications from spec to deployment.",
+    tl2_period:"2021 — 2023", tl2_role:"Full-stack Developer", tl2_company:"TechCo · Belgrade",
+    tl2_desc:"Built and maintained multiple client-facing web applications using React and Node.js. Led the migration of a legacy system to a modern microservices architecture.",
+    tl3_period:"2019 — 2021", tl3_role:"Junior Developer", tl3_company:"Startup Studio · Belgrade",
+    tl3_desc:"Joined a small product team building SaaS tools. Responsible for frontend development and REST API integrations. First exposure to CI/CD pipelines and Docker.",
+    tl4_period:"2015 — 2019", tl4_role:"BSc Computer Science", tl4_company:"University of Belgrade",
+    tl4_desc:"Graduated with a focus on software engineering and distributed systems.",
     skills_eyebrow:"/skills", skills_h2:"Skills &amp; tools",
     skills_cat1:"Languages &amp; frameworks", skills_cat2:"Databases &amp; infrastructure", skills_cat3:"Tools &amp; practices",
     proj_eyebrow:"/projects", proj_h2:"Selected projects",
@@ -346,19 +405,29 @@ const t = {
     footer_tag:"Designed and built with attention to detail.",
   },
   sr: {
-    meta_desc:          "Viktor, full-stack developer iz Beograda. Portfolio, veštine i kontakt.",
-    nav_about:          "O meni", nav_skills:"Veštine", nav_projects:"Projekti", nav_contact:"Kontakt",
-    hero_eyebrow:       "// softverski inženjer",
-    hero_h1:            'Razvijam softver koji <span class="accent-text">rešava prave probleme.</span>',
-    hero_lead:          "Ja sam Viktor, full-stack developer iz Beograda. Gradim brze, pouzdane web aplikacije — od baze podataka do interfejsa koji ljudi zaista koriste.",
-    hero_btn_projects:  "Pogledaj projekte", hero_btn_contact:"Kontaktiraj me",
-    meta_role_label:    "uloga",   meta_role_value:   "Full-stack Developer",
-    meta_loc_label:     "lokacija",meta_loc_value:    "Beograd, Srbija",
-    meta_status_label:  "status",  meta_status_value: "Dostupan za projekte",
-    meta_stack_label:   "stek",
+    meta_desc:"Viktor, full-stack developer iz Beograda. Portfolio, veštine i kontakt.",
+    nav_about:"O meni", nav_exp:"Iskustvo", nav_skills:"Veštine", nav_projects:"Projekti", nav_contact:"Kontakt",
+    hero_eyebrow:"// softverski inženjer",
+    hero_h1:'Razvijam softver koji <span class="accent-text">rešava prave probleme.</span>',
+    hero_lead:"Ja sam Viktor, full-stack developer iz Beograda. Gradim brze, pouzdane web aplikacije — od baze podataka do interfejsa koji ljudi zaista koriste.",
+    hero_btn_projects:"Pogledaj projekte", hero_btn_contact:"Kontaktiraj me",
+    hero_btn_cv:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Preuzmi CV',
+    meta_role_label:"uloga", meta_role_value:"Full-stack Developer",
+    meta_loc_label:"lokacija", meta_loc_value:"Beograd, Srbija",
+    meta_status_label:"status", meta_status_value:"Dostupan za projekte",
+    meta_stack_label:"stek",
     about_eyebrow:"/o-meni", about_h2:"O meni",
     about_p1:"Bavim se razvojem softvera već nekoliko godina, sa fokusom na web aplikacije koje moraju da rade pouzdano i pod opterećenjem. Najviše uživam u trenutku kada se dobra arhitektura na papiru pretvori u proizvod koji ljudi svakodnevno koriste.",
     about_p2:"Radio sam i kao deo malih timova i samostalno — od ideje i tehničke specifikacije, preko razvoja, do isporuke i održavanja u produkciji. Trenutno sam baziran u Beogradu i otvoren za saradnju, bilo lokalno ili remote.",
+    exp_eyebrow:"/iskustvo", exp_h2:"Iskustvo",
+    tl1_period:"2023 — danas", tl1_role:"Senior Full-stack Developer", tl1_company:"Freelance / Remote",
+    tl1_desc:"Radim samostalno sa klijentima širom Evrope — dizajniram sisteme, gradim API-je i isporučujem web aplikacije od specifikacije do produkcije.",
+    tl2_period:"2021 — 2023", tl2_role:"Full-stack Developer", tl2_company:"TechCo · Beograd",
+    tl2_desc:"Gradio i održavao web aplikacije koristeći React i Node.js. Vodio migraciju legacy sistema na modernu mikroservisnu arhitekturu.",
+    tl3_period:"2019 — 2021", tl3_role:"Junior Developer", tl3_company:"Startup Studio · Beograd",
+    tl3_desc:"Pridružio se malom product timu koji gradi SaaS alate. Odgovoran za frontend razvoj i REST API integracije. Prva iskustva sa CI/CD pipeline-ima i Dockerom.",
+    tl4_period:"2015 — 2019", tl4_role:"BSc Računarstvo i informatika", tl4_company:"Univerzitet u Beogradu",
+    tl4_desc:"Diplomirao sa fokusom na softversko inženjerstvo i distribuirane sisteme.",
     skills_eyebrow:"/veštine", skills_h2:"Veštine i alati",
     skills_cat1:"Jezici i frameworki", skills_cat2:"Baze i infrastruktura", skills_cat3:"Alati i prakse",
     proj_eyebrow:"/projekti", proj_h2:"Izabrani projekti",
@@ -386,10 +455,8 @@ function applyLang(lang) {
   });
   document.getElementById('langSelect').value = lang;
 }
-
 document.getElementById('langSelect').addEventListener('change', e => applyLang(e.target.value));
 
-/* ===== THEME ===== */
 const themeToggle = document.getElementById('themeToggle');
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
@@ -401,7 +468,6 @@ themeToggle.addEventListener('click', () => {
 });
 setTheme('dark');
 
-/* ===== MOBILE NAV ===== */
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
@@ -413,15 +479,12 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', 'false');
 }));
 
-/* ===== SCROLL REVEAL ===== */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* Init */
 applyLang('en');
 </script>
-
 </body>
 </html>
