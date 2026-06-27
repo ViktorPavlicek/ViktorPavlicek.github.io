@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viktor — Software Developer</title>
+  <title>Viktor Pavlicek — IT Specialist</title>
   <meta id="metaDesc" name="description"
-    content="Viktor, full-stack developer based in Belgrade. Portfolio, skills, and contact.">
+    content="Viktor Pavlicek, IT specialist based in Belgrade. Portfolio, skills, and contact.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -52,27 +52,11 @@
       --tag-bg: rgba(67, 56, 202, 0.1);
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     @media(prefers-reduced-motion:reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .001ms !important;
-        transition-duration: .001ms !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
     }
 
     body {
@@ -86,737 +70,142 @@
       transition: background .3s ease, color .3s ease;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -.01em; }
+    :focus-visible { outline: 2px solid var(--violet-light); outline-offset: 3px; border-radius: 4px; }
 
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--font-display);
-      margin: 0;
-      letter-spacing: -.01em;
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--violet-light);
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
-
-    .container {
-      max-width: var(--container-w);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
+    .container { max-width: var(--container-w); margin: 0 auto; padding: 0 24px; }
     .eyebrow {
-      font-family: var(--font-mono);
-      font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--violet-light);
-      margin: 0 0 14px;
+      font-family: var(--font-mono); font-size: .78rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--violet-light); margin: 0 0 14px;
     }
 
     /* NAV */
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--header-bg);
-      backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 50;
+      background: var(--header-bg); backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
       transition: background .3s ease, border-color .3s ease;
     }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-    }
-
-    .logo {
-      font-family: var(--font-mono);
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: var(--ink);
-      letter-spacing: .02em;
-    }
-
-    .logo-dot {
-      color: var(--indigo);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
-
-    .nav-links a {
-      font-size: .92rem;
-      color: var(--slate);
-      transition: color .2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
-    .nav-cta {
-      border: 1px solid var(--line);
-      padding: 8px 16px;
-      border-radius: 6px;
-      color: var(--ink) !important;
-    }
-
-    .nav-cta:hover {
-      border-color: var(--indigo);
-      color: var(--violet-light) !important;
-    }
-
-    .lang-switch {
-      position: relative;
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-family: var(--font-mono); font-weight: 600; font-size: 1.05rem; color: var(--ink); letter-spacing: .02em; }
+    .logo-dot { color: var(--indigo); }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-size: .92rem; color: var(--slate); transition: color .2s ease; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { border: 1px solid var(--line); padding: 8px 16px; border-radius: 6px; color: var(--ink) !important; }
+    .nav-cta:hover { border-color: var(--indigo); color: var(--violet-light) !important; }
+    .lang-switch { position: relative; display: flex; align-items: center; flex-shrink: 0; }
     .lang-switch select {
-      appearance: none;
-      -webkit-appearance: none;
-      height: 36px;
-      padding: 0 26px 0 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--navy-surface);
-      color: var(--ink);
-      font-family: var(--font-mono);
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      cursor: pointer;
-      transition: border-color .2s ease, background .2s ease, color .2s ease;
+      appearance: none; -webkit-appearance: none; height: 36px; padding: 0 26px 0 12px;
+      border: 1px solid var(--line); border-radius: 8px; background: var(--navy-surface);
+      color: var(--ink); font-family: var(--font-mono); font-size: .8rem; font-weight: 600;
+      letter-spacing: .04em; cursor: pointer; transition: border-color .2s ease, background .2s ease, color .2s ease;
     }
-
-    .lang-switch select:hover,
-    .lang-switch select:focus-visible {
-      border-color: var(--indigo);
-      outline: none;
-    }
-
+    .lang-switch select:hover, .lang-switch select:focus-visible { border-color: var(--indigo); outline: none; }
     .lang-switch::after {
-      content: "";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      width: 6px;
-      height: 6px;
-      border-right: 1.5px solid var(--slate);
-      border-bottom: 1.5px solid var(--slate);
-      transform: translateY(-65%) rotate(45deg);
-      pointer-events: none;
+      content: ""; position: absolute; right: 10px; top: 50%; width: 6px; height: 6px;
+      border-right: 1.5px solid var(--slate); border-bottom: 1.5px solid var(--slate);
+      transform: translateY(-65%) rotate(45deg); pointer-events: none;
     }
-
     .theme-toggle {
-      position: relative;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--navy-surface);
-      color: var(--ink);
-      cursor: pointer;
-      transition: border-color .2s ease, background .2s ease;
-      flex-shrink: 0;
+      position: relative; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line); border-radius: 8px; background: var(--navy-surface);
+      color: var(--ink); cursor: pointer; transition: border-color .2s ease, background .2s ease; flex-shrink: 0;
     }
-
-    .theme-toggle:hover {
-      border-color: var(--indigo);
-    }
-
-    .theme-toggle svg {
-      position: absolute;
-      width: 17px;
-      height: 17px;
-      transition: opacity .25s ease, transform .25s ease;
-    }
-
-    .theme-toggle .icon-moon {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
-    }
-
-    .theme-toggle .icon-sun {
-      opacity: 0;
-      transform: scale(.6) rotate(-90deg);
-    }
-
-    html[data-theme="light"] .theme-toggle .icon-moon {
-      opacity: 0;
-      transform: scale(.6) rotate(90deg);
-    }
-
-    html[data-theme="light"] .theme-toggle .icon-sun {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    .nav-toggle span {
-      width: 22px;
-      height: 2px;
-      background: var(--ink);
-      display: block;
-      transition: transform .25s ease, opacity .25s ease;
-    }
+    .theme-toggle:hover { border-color: var(--indigo); }
+    .theme-toggle svg { position: absolute; width: 17px; height: 17px; transition: opacity .25s ease, transform .25s ease; }
+    .theme-toggle .icon-moon { opacity: 1; transform: scale(1) rotate(0deg); }
+    .theme-toggle .icon-sun { opacity: 0; transform: scale(.6) rotate(-90deg); }
+    html[data-theme="light"] .theme-toggle .icon-moon { opacity: 0; transform: scale(.6) rotate(90deg); }
+    html[data-theme="light"] .theme-toggle .icon-sun { opacity: 1; transform: scale(1) rotate(0deg); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-toggle span { width: 22px; height: 2px; background: var(--ink); display: block; transition: transform .25s ease, opacity .25s ease; }
 
     /* HERO */
-    .hero {
-      padding: 96px 0 80px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 4.2vw, 3.6rem);
-      font-weight: 800;
-      line-height: 1.12;
-      margin-bottom: 22px;
-    }
-
-    .accent-text {
-      background: linear-gradient(95deg, var(--violet-light), var(--indigo));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-lead {
-      color: var(--slate);
-      font-size: 1.08rem;
-      max-width: 46ch;
-      margin-bottom: 36px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 24px;
-      border-radius: 7px;
-      font-size: .92rem;
-      font-weight: 600;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
-    }
-
-    .btn-primary {
-      background: var(--indigo);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--violet-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--line);
-      color: var(--ink);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--indigo);
-      color: var(--violet-light);
-    }
-
-    .btn-cv {
-      border: 1px solid var(--indigo);
-      color: var(--violet-light);
-      background: var(--tag-bg);
-    }
-
-    .btn-cv:hover {
-      background: var(--indigo);
-      color: #fff;
-      transform: translateY(-1px);
-    }
-
-    .btn-cv svg {
-      width: 15px;
-      height: 15px;
-      flex-shrink: 0;
-    }
-
-    .hero-meta {
-      background: var(--navy-surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: background .3s ease, border-color .3s ease;
-    }
-
-    .profile-photo {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4/3;
-      border-radius: 7px;
-      overflow: hidden;
-      margin-bottom: 24px;
-      border: 1px solid var(--line);
-    }
-
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 18%;
-      display: block;
-      filter: var(--photo-filter);
-    }
-
-    .profile-photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, var(--photo-overlay-1), var(--photo-overlay-2) 55%, var(--photo-overlay-3));
-      mix-blend-mode: multiply;
-      pointer-events: none;
-    }
-
-    .meta-list {
-      margin: 0;
-    }
-
-    .meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      font-family: var(--font-mono);
-      font-size: .86rem;
-    }
-
-    .meta-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .meta-row:first-child {
-      padding-top: 0;
-    }
-
-    .meta-row dt {
-      color: var(--slate);
-      text-transform: lowercase;
-    }
-
-    .meta-row dd {
-      margin: 0;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-align: right;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 0 0 rgba(74, 222, 128, .6);
-      animation: pulse 2.2s infinite;
-      flex-shrink: 0;
-    }
-
+    .hero { padding: 96px 0 80px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: start; }
+    .hero h1 { font-size: clamp(2.4rem, 4.2vw, 3.6rem); font-weight: 800; line-height: 1.12; margin-bottom: 22px; }
+    .accent-text { background: linear-gradient(95deg, var(--violet-light), var(--indigo)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-lead { color: var(--slate); font-size: 1.08rem; max-width: 46ch; margin-bottom: 36px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 7px; font-size: .92rem; font-weight: 600; transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease; }
+    .btn-primary { background: var(--indigo); color: #fff; }
+    .btn-primary:hover { background: var(--violet-light); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--line); color: var(--ink); }
+    .btn-outline:hover { border-color: var(--indigo); color: var(--violet-light); }
+    .btn-cv { border: 1px solid var(--indigo); color: var(--violet-light); background: var(--tag-bg); }
+    .btn-cv:hover { background: var(--indigo); color: #fff; transform: translateY(-1px); }
+    .btn-cv svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .hero-meta { background: var(--navy-surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; transition: background .3s ease, border-color .3s ease; }
+    .profile-photo { position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 7px; overflow: hidden; margin-bottom: 24px; border: 1px solid var(--line); }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; filter: var(--photo-filter); }
+    .profile-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, var(--photo-overlay-1), var(--photo-overlay-2) 55%, var(--photo-overlay-3)); mix-blend-mode: multiply; pointer-events: none; }
+    .meta-list { margin: 0; }
+    .meta-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: .86rem; }
+    .meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .meta-row:first-child { padding-top: 0; }
+    .meta-row dt { color: var(--slate); text-transform: lowercase; }
+    .meta-row dd { margin: 0; color: var(--ink); display: flex; align-items: center; gap: 8px; text-align: right; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 0 rgba(74,222,128,.6); animation: pulse 2.2s infinite; flex-shrink: 0; }
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(74, 222, 128, .5);
-      }
-
-      70% {
-        box-shadow: 0 0 0 7px rgba(74, 222, 128, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(74,222,128,.5); }
+      70% { box-shadow: 0 0 0 7px rgba(74,222,128,0); }
+      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
     }
 
     /* SECTIONS */
-    .section {
-      padding: 80px 0;
-      border-bottom: 1px solid var(--line);
-    }
+    .section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+    .section h2 { font-size: clamp(1.7rem, 2.6vw, 2.2rem); font-weight: 700; margin-bottom: 28px; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .section-grid { display: grid; grid-template-columns: 200px 1fr; gap: 48px; }
+    .section-body p { color: var(--slate); max-width: 64ch; margin: 0 0 18px; font-size: 1.02rem; }
+    .section-body p:last-child { margin-bottom: 0; }
 
-    .section h2 {
-      font-size: clamp(1.7rem, 2.6vw, 2.2rem);
-      font-weight: 700;
-      margin-bottom: 28px;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .skill-group h3 { font-family: var(--font-mono); font-size: .82rem; font-weight: 500; color: var(--slate); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 16px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-list li { font-family: var(--font-mono); font-size: .84rem; padding: 7px 12px; background: var(--navy-surface); border: 1px solid var(--line); border-radius: 6px; color: var(--ink); }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
+    .kontakt-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .kontakt-grid p { color: var(--slate); max-width: 48ch; font-size: 1.02rem; }
+    .kontakt-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; background: var(--navy-surface); border: 1px solid var(--line); border-radius: var(--radius); font-family: var(--font-mono); font-size: .92rem; transition: border-color .2s ease, transform .2s ease; }
+    .contact-link:hover { border-color: var(--indigo); transform: translateX(3px); }
+    .contact-link .label { color: var(--slate); }
+    .contact-link .value { color: var(--ink); font-weight: 500; }
 
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .site-footer { padding: 32px 0; }
+    .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: .84rem; color: var(--slate); }
 
-    .section-grid {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 48px;
-    }
-
-    .section-body p {
-      color: var(--slate);
-      max-width: 64ch;
-      margin: 0 0 18px;
-      font-size: 1.02rem;
-    }
-
-    .section-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    .skill-group h3 {
-      font-family: var(--font-mono);
-      font-size: .82rem;
-      font-weight: 500;
-      color: var(--slate);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 16px;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag-list li {
-      font-family: var(--font-mono);
-      font-size: .84rem;
-      padding: 7px 12px;
-      background: var(--navy-surface);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      color: var(--ink);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .project-card {
-      background: var(--navy-surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--indigo);
-      background: var(--navy-elevated);
-    }
-
-    .project-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .project-card p {
-      color: var(--slate);
-      font-size: .94rem;
-      margin: 0 0 18px;
-      flex-grow: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 18px;
-    }
-
-    .project-tags li {
-      font-family: var(--font-mono);
-      font-size: .74rem;
-      color: var(--violet-light);
-      background: var(--tag-bg);
-      padding: 4px 9px;
-      border-radius: 5px;
-    }
-
-    .project-link {
-      font-size: .88rem;
-      font-weight: 600;
-      color: var(--ink);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .project-link span {
-      transition: transform .2s ease;
-    }
-
-    .project-card:hover .project-link span {
-      transform: translateX(3px);
-    }
-
-    .kontakt-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .kontakt-grid p {
-      color: var(--slate);
-      max-width: 48ch;
-      font-size: 1.02rem;
-    }
-
-    .kontakt-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 22px;
-      background: var(--navy-surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      font-family: var(--font-mono);
-      font-size: .92rem;
-      transition: border-color .2s ease, transform .2s ease;
-    }
-
-    .contact-link:hover {
-      border-color: var(--indigo);
-      transform: translateX(3px);
-    }
-
-    .contact-link .label {
-      color: var(--slate);
-    }
-
-    .contact-link .value {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .site-footer {
-      padding: 32px 0;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: .84rem;
-      color: var(--slate);
-    }
-
-    /* ===== TIMELINE ===== */
-    .timeline {
-      position: relative;
-      padding-left: 28px;
-      margin-top: 8px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 6px;
-      bottom: 6px;
-      width: 1.5px;
-      background: linear-gradient(to bottom, var(--indigo), transparent);
-    }
-
-    .tl-item {
-      position: relative;
-      margin-bottom: 40px;
-    }
-
-    .tl-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .tl-dot {
-      position: absolute;
-      left: -35px;
-      top: 5px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--navy-deep);
-      border: 2px solid var(--indigo);
-      transition: background .25s ease;
-    }
-
-    .tl-item:hover .tl-dot {
-      background: var(--indigo);
-    }
-
-    .tl-period {
-      font-family: var(--font-mono);
-      font-size: .76rem;
-      color: var(--violet-light);
-      letter-spacing: .06em;
-      margin-bottom: 4px;
-    }
-
-    .tl-role {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .tl-company {
-      font-size: .9rem;
-      color: var(--slate);
-      margin-bottom: 8px;
-    }
-
-    .tl-desc {
-      font-size: .92rem;
-      color: var(--slate);
-      max-width: 52ch;
-      line-height: 1.6;
-    }
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 28px; margin-top: 8px; }
+    .timeline::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1.5px; background: linear-gradient(to bottom, var(--indigo), transparent); }
+    .tl-item { position: relative; margin-bottom: 40px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot { position: absolute; left: -35px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--navy-deep); border: 2px solid var(--indigo); transition: background .25s ease; }
+    .tl-item:hover .tl-dot { background: var(--indigo); }
+    .tl-period { font-family: var(--font-mono); font-size: .76rem; color: var(--violet-light); letter-spacing: .06em; margin-bottom: 4px; }
+    .tl-role { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 2px; }
+    .tl-company { font-size: .9rem; color: var(--slate); margin-bottom: 8px; }
+    .tl-desc { font-size: .92rem; color: var(--slate); max-width: 52ch; line-height: 1.6; }
 
     @media(max-width:880px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .kontakt-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .section-grid { grid-template-columns: 1fr; gap: 16px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .kontakt-grid { grid-template-columns: 1fr; }
     }
-
     @media(max-width:680px) {
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: var(--navy-deep);
-        border-bottom: 1px solid var(--line);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 24px 28px;
-        gap: 18px;
-        transform: translateY(-12px);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity .2s ease, transform .2s ease;
-      }
-
-      .nav-links.is-open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 64px 0 56px;
-      }
-
-      .section {
-        padding: 56px 0;
-      }
+      .nav-toggle { display: flex; }
+      .nav-links { position: absolute; top: 68px; left: 0; right: 0; background: var(--navy-deep); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; padding: 20px 24px 28px; gap: 18px; transform: translateY(-12px); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+      .nav-links.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero { padding: 64px 0 56px; }
+      .section { padding: 56px 0; }
     }
   </style>
 </head>
@@ -831,7 +220,6 @@
           <li><a href="#o-meni" data-i18n="nav_about">About</a></li>
           <li><a href="#iskustvo" data-i18n="nav_exp">Experience</a></li>
           <li><a href="#vestine" data-i18n="nav_skills">Skills</a></li>
-          <li><a href="#projekti" data-i18n="nav_projects">Projects</a></li>
           <li><a href="#kontakt" data-i18n="nav_contact" class="nav-cta">Contact</a></li>
         </ul>
         <div class="lang-switch">
@@ -840,18 +228,9 @@
             <option value="sr">SR</option>
           </select>
         </div>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme"
-          aria-pressed="false">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path
-              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-          </svg>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </button>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -866,32 +245,26 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="eyebrow" data-i18n="hero_eyebrow">// software engineer</p>
-          <h1 data-i18n="hero_h1">I build software that <span class="accent-text">solves real problems.</span></h1>
-          <p class="hero-lead" data-i18n="hero_lead">I'm Viktor, a full-stack developer based in Belgrade. I build fast,
-            reliable web applications — from the database up to the interfaces people actually use.</p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">// it specialist</p>
+          <h1 data-i18n="hero_h1">IT professional who <span class="accent-text">keeps systems running.</span></h1>
+          <p class="hero-lead" data-i18n="hero_lead">I'm Viktor, an IT specialist based in Belgrade with experience in Help Desk support, infrastructure maintenance, and hardware servicing across corporate, banking, and healthcare environments.</p>
           <div class="hero-actions">
-            <a href="#projekti" class="btn btn-primary" data-i18n="hero_btn_projects">View projects</a>
+            <a href="#iskustvo" class="btn btn-primary" data-i18n="hero_btn_exp">View experience</a>
             <a href="#kontakt" class="btn btn-outline" data-i18n="hero_btn_contact">Get in touch</a>
-            <a href="resume.pdf" download class="btn btn-cv" data-i18n="hero_btn_cv">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Download CV
+            <a href="Viktor_Pavlicek_CV_EN.pdf" download class="btn btn-cv">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="hero_btn_cv">Download CV</span>
             </a>
           </div>
         </div>
         <div class="hero-meta" aria-label="Profile">
           <div class="profile-photo">
-            <img src="assets/cv.jpg" alt="Viktor, full-stack developer based in Belgrade" width="640" height="480">
+            <img src="cv.jpg" alt="Viktor Pavlicek, IT specialist based in Belgrade" width="640" height="480">
           </div>
           <dl class="meta-list">
             <div class="meta-row">
               <dt data-i18n="meta_role_label">role</dt>
-              <dd data-i18n="meta_role_value">Full-stack Developer</dd>
+              <dd data-i18n="meta_role_value">IT Specialist</dd>
             </div>
             <div class="meta-row">
               <dt data-i18n="meta_loc_label">location</dt>
@@ -899,12 +272,11 @@
             </div>
             <div class="meta-row">
               <dt data-i18n="meta_status_label">status</dt>
-              <dd><span class="status-dot" aria-hidden="true"></span><span data-i18n="meta_status_value">Available for
-                  projects</span></dd>
+              <dd><span class="status-dot" aria-hidden="true"></span><span data-i18n="meta_status_value">Open to opportunities</span></dd>
             </div>
             <div class="meta-row">
-              <dt data-i18n="meta_stack_label">stack</dt>
-              <dd>TypeScript · Node.js · React</dd>
+              <dt data-i18n="meta_stack_label">exp</dt>
+              <dd data-i18n="meta_stack_value">Help Desk · IT Support · Logistics</dd>
             </div>
           </dl>
         </div>
@@ -917,17 +289,13 @@
         <p class="eyebrow" data-i18n="about_eyebrow">/about</p>
         <div class="section-body">
           <h2 data-i18n="about_h2">About</h2>
-          <p data-i18n="about_p1">I've been building software for several years, with a focus on web applications that
-            need to perform reliably under load. What I enjoy most is the moment a solid architecture on paper turns
-            into a product people use every day.</p>
-          <p data-i18n="about_p2">I've worked both as part of small teams and independently — from the initial idea and
-            technical spec, through development, to shipping and maintaining in production. I'm currently based in
-            Belgrade and open to collaboration, locally or remote.</p>
+          <p data-i18n="about_p1">IT professional with hands-on experience across Help Desk support, system administration, hardware servicing, and logistics coordination. I've worked in demanding environments — from large hospitals to international banks — where reliability and quick problem-solving matter.</p>
+          <p data-i18n="about_p2">I hold a degree in Computer Science from Singidunum University and have continued expanding my knowledge through IT Academy training. I'm communicative, fast to learn, and driven to keep growing professionally. Based in Belgrade, available locally or remotely.</p>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE / TIMELINE -->
+    <!-- EXPERIENCE -->
     <section id="iskustvo" class="section reveal">
       <div class="container section-grid">
         <p class="eyebrow" data-i18n="exp_eyebrow">/experience</p>
@@ -937,38 +305,50 @@
 
             <div class="tl-item">
               <div class="tl-dot" aria-hidden="true"></div>
-              <p class="tl-period" data-i18n="tl1_period">2023 — Present</p>
-              <h3 class="tl-role" data-i18n="tl1_role">Senior Full-stack Developer</h3>
-              <p class="tl-company" data-i18n="tl1_company">Freelance / Remote</p>
-              <p class="tl-desc" data-i18n="tl1_desc">Working independently with clients across Europe — designing
-                systems, building APIs, and delivering production-ready web applications from spec to deployment.</p>
+              <p class="tl-period" data-i18n="tl1_period">2023 — 2024</p>
+              <h3 class="tl-role" data-i18n="tl1_role">Logistics Coordinator</h3>
+              <p class="tl-company" data-i18n="tl1_company">AKKompresor · Belgrade</p>
+              <p class="tl-desc" data-i18n="tl1_desc">Managed logistics operations and coordinated procurement processes and supply chain activities.</p>
             </div>
 
             <div class="tl-item">
               <div class="tl-dot" aria-hidden="true"></div>
-              <p class="tl-period" data-i18n="tl2_period">2021 — 2023</p>
-              <h3 class="tl-role" data-i18n="tl2_role">Full-stack Developer</h3>
-              <p class="tl-company" data-i18n="tl2_company">TechCo · Belgrade</p>
-              <p class="tl-desc" data-i18n="tl2_desc">Built and maintained multiple client-facing web applications using
-                React and Node.js. Led the migration of a legacy system to a modern microservices architecture.</p>
+              <p class="tl-period" data-i18n="tl2_period">2022</p>
+              <h3 class="tl-role" data-i18n="tl2_role">Printer Service Technician</h3>
+              <p class="tl-company" data-i18n="tl2_company">Malex Copy Service Center · Belgrade</p>
+              <p class="tl-desc" data-i18n="tl2_desc">Diagnostics and repair of Canon, Lexmark, HP, and other printer and copier brands.</p>
             </div>
 
             <div class="tl-item">
               <div class="tl-dot" aria-hidden="true"></div>
-              <p class="tl-period" data-i18n="tl3_period">2019 — 2021</p>
-              <h3 class="tl-role" data-i18n="tl3_role">Junior Developer</h3>
-              <p class="tl-company" data-i18n="tl3_company">Startup Studio · Belgrade</p>
-              <p class="tl-desc" data-i18n="tl3_desc">Joined a small product team building SaaS tools. Responsible for
-                frontend development and REST API integrations. First exposure to CI/CD pipelines and Docker.</p>
+              <p class="tl-period" data-i18n="tl3_period">2018 — 2021</p>
+              <h3 class="tl-role" data-i18n="tl3_role">IT Support Specialist</h3>
+              <p class="tl-company" data-i18n="tl3_company">University Clinical Center of Serbia · Belgrade</p>
+              <p class="tl-desc" data-i18n="tl3_desc">End-user support, hardware and network maintenance across a large hospital environment. Kept critical systems operational 24/7.</p>
             </div>
 
             <div class="tl-item">
               <div class="tl-dot" aria-hidden="true"></div>
-              <p class="tl-period" data-i18n="tl4_period">2015 — 2019</p>
-              <h3 class="tl-role" data-i18n="tl4_role">BSc Computer Science</h3>
-              <p class="tl-company" data-i18n="tl4_company">University of Belgrade</p>
-              <p class="tl-desc" data-i18n="tl4_desc">Graduated with a focus on software engineering and distributed
-                systems.</p>
+              <p class="tl-period" data-i18n="tl4_period">2015 — 2017</p>
+              <h3 class="tl-role" data-i18n="tl4_role">IT Help Desk Technician</h3>
+              <p class="tl-company" data-i18n="tl4_company">Milsped · Nestle · UniCredit Bank · KBCnet</p>
+              <p class="tl-desc" data-i18n="tl4_desc">Hardware and software troubleshooting and end-user support across multiple corporate and banking clients.</p>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot" aria-hidden="true"></div>
+              <p class="tl-period" data-i18n="tl5_period">2018 — 2019</p>
+              <h3 class="tl-role" data-i18n="tl5_role">IT Training</h3>
+              <p class="tl-company" data-i18n="tl5_company">IT Academy · Belgrade</p>
+              <p class="tl-desc" data-i18n="tl5_desc">Advanced professional training in IT systems, networking, and support.</p>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot" aria-hidden="true"></div>
+              <p class="tl-period" data-i18n="tl6_period">2013</p>
+              <h3 class="tl-role" data-i18n="tl6_role">BSc Computer Science</h3>
+              <p class="tl-company" data-i18n="tl6_company">Faculty of Computing, Singidunum University · Belgrade</p>
+              <p class="tl-desc" data-i18n="tl6_desc">Graduated with a focus on software engineering, web development, and information systems.</p>
             </div>
 
           </div>
@@ -983,78 +363,23 @@
         <h2 data-i18n="skills_h2">Skills &amp; tools</h2>
         <div class="skills-grid">
           <div class="skill-group">
-            <h3 data-i18n="skills_cat1">Languages &amp; frameworks</h3>
+            <h3 data-i18n="skills_cat1">Programming &amp; Web</h3>
             <ul class="tag-list">
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>Next.js</li>
+              <li>Java</li><li>JSP</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li><li>JSON</li><li>XML</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 data-i18n="skills_cat2">Databases &amp; infrastructure</h3>
+            <h3 data-i18n="skills_cat2">Systems &amp; Tools</h3>
             <ul class="tag-list">
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-              <li>Docker</li>
-              <li>AWS</li>
-              <li>Redis</li>
+              <li>MS Windows</li><li>Linux (Ubuntu)</li><li>NetBeans IDE</li><li>Adobe Dreamweaver</li><li>WampServer</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 data-i18n="skills_cat3">Tools &amp; practices</h3>
+            <h3 data-i18n="skills_cat3">Hardware &amp; Other</h3>
             <ul class="tag-list">
-              <li>Git</li>
-              <li>CI/CD</li>
-              <li>REST API</li>
-              <li>Figma</li>
-              <li>Linux</li>
+              <li>Help Desk Support</li><li>Printer Servicing</li><li>Canon / Lexmark / HP</li><li>Driver's License B</li>
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projekti" class="section reveal">
-      <div class="container">
-        <p class="eyebrow" data-i18n="proj_eyebrow">/projects</p>
-        <h2 data-i18n="proj_h2">Selected projects</h2>
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3 data-i18n="proj1_title">Order management platform</h3>
-            <p data-i18n="proj1_desc">An internal system for tracking orders and inventory in real time, with a
-              dashboard for the support team.</p>
-            <ul class="project-tags">
-              <li>React</li>
-              <li>Node.js</li>
-              <li>PostgreSQL</li>
-            </ul>
-            <a href="#" class="project-link" data-i18n="proj_link">View project <span>→</span></a>
-          </article>
-          <article class="project-card">
-            <h3 data-i18n="proj2_title">Booking API</h3>
-            <p data-i18n="proj2_desc">A REST API connecting the booking system with external partners, built with
-              stability and scalability in mind.</p>
-            <ul class="project-tags">
-              <li>TypeScript</li>
-              <li>Express</li>
-              <li>Redis</li>
-            </ul>
-            <a href="#" class="project-link" data-i18n="proj_link">View project <span>→</span></a>
-          </article>
-          <article class="project-card">
-            <h3 data-i18n="proj3_title">Customer portal redesign</h3>
-            <p data-i18n="proj3_desc">A modernization of an existing application — a new component architecture and a
-              40% performance improvement.</p>
-            <ul class="project-tags">
-              <li>Next.js</li>
-              <li>Docker</li>
-              <li>AWS</li>
-            </ul>
-            <a href="#" class="project-link" data-i18n="proj_link">View project <span>→</span></a>
-          </article>
         </div>
       </div>
     </section>
@@ -1065,18 +390,17 @@
         <div>
           <p class="eyebrow" data-i18n="contact_eyebrow">/contact</p>
           <h2 data-i18n="contact_h2">Let's talk</h2>
-          <p data-i18n="contact_p">I'm open to new projects, collaborations, and conversations about ideas. The fastest
-            way to reach me is by email — I usually reply within the day.</p>
+          <p data-i18n="contact_p">Open to new opportunities, collaborations, and conversations. The fastest way to reach me is by email — I usually reply within the day.</p>
         </div>
         <div class="kontakt-links">
-          <a href="mailto:viktropavlicek@gmail.com" class="contact-link">
-            <span class="label">email</span><span class="value">viktropavlicek@gmail.com</span>
+          <a href="tel:+381693402200" class="contact-link">
+            <span class="label">phone</span><span class="value">+381/69-3402200</span>
           </a>
-          <a href="https://github.com/" class="contact-link" target="_blank" rel="noopener">
-            <span class="label">github</span><span class="value">@ViktorPavlicek</span>
+          <a href="mailto:viktorpavlicek@ymail.com" class="contact-link">
+            <span class="label">email</span><span class="value">viktorpavlicek@ymail.com</span>
           </a>
-          <a href="https://linkedin.com/" class="contact-link" target="_blank" rel="noopener">
-            <span class="label">linkedin</span><span class="value">in/viktor</span>
+          <a href="mailto:viktor.pavlicek.24@singimail.rs" class="contact-link">
+            <span class="label">uni email</span><span class="value">viktor.pavlicek.24@singimail.rs</span>
           </a>
           <a href="https://instagram.com/vixon.93" class="contact-link" target="_blank" rel="noopener">
             <span class="label">instagram</span><span class="value">@vixon.93</span>
@@ -1089,7 +413,7 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p data-i18n="footer_copy">© 2026 Viktor · Belgrade, Serbia</p>
+      <p data-i18n="footer_copy">© 2026 Viktor Pavlicek · Belgrade, Serbia</p>
       <p data-i18n="footer_tag">Designed and built with attention to detail.</p>
     </div>
   </footer>
@@ -1097,82 +421,72 @@
   <script>
     const t = {
       en: {
-        meta_desc: "Viktor, full-stack developer based in Belgrade. Portfolio, skills, and contact.",
-        nav_about: "About", nav_exp: "Experience", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
-        hero_eyebrow: "// software engineer",
-        hero_h1: 'I build software that <span class="accent-text">solves real problems.</span>',
-        hero_lead: "I'm Viktor, a full-stack developer based in Belgrade. I build fast, reliable web applications — from the database up to the interfaces people actually use.",
-        hero_btn_projects: "View projects", hero_btn_contact: "Get in touch",
-        hero_btn_cv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download CV',
-        meta_role_label: "role", meta_role_value: "Full-stack Developer",
+        meta_desc: "Viktor Pavlicek, IT specialist based in Belgrade. Skills, experience, and contact.",
+        nav_about: "About", nav_exp: "Experience", nav_skills: "Skills", nav_contact: "Contact",
+        hero_eyebrow: "// it specialist",
+        hero_h1: 'IT professional who <span class="accent-text">keeps systems running.</span>',
+        hero_lead: "I'm Viktor, an IT specialist based in Belgrade with experience in Help Desk support, infrastructure maintenance, and hardware servicing across corporate, banking, and healthcare environments.",
+        hero_btn_exp: "View experience", hero_btn_contact: "Get in touch", hero_btn_cv: "Download CV",
+        meta_role_label: "role", meta_role_value: "IT Specialist",
         meta_loc_label: "location", meta_loc_value: "Belgrade, Serbia",
-        meta_status_label: "status", meta_status_value: "Available for projects",
-        meta_stack_label: "stack",
+        meta_status_label: "status", meta_status_value: "Open to opportunities",
+        meta_stack_label: "exp", meta_stack_value: "Help Desk · IT Support · Logistics",
         about_eyebrow: "/about", about_h2: "About",
-        about_p1: "I've been building software for several years, with a focus on web applications that need to perform reliably under load. What I enjoy most is the moment a solid architecture on paper turns into a product people use every day.",
-        about_p2: "I've worked both as part of small teams and independently — from the initial idea and technical spec, through development, to shipping and maintaining in production. I'm currently based in Belgrade and open to collaboration, locally or remote.",
+        about_p1: "IT professional with hands-on experience across Help Desk support, system administration, hardware servicing, and logistics coordination. I've worked in demanding environments — from large hospitals to international banks — where reliability and quick problem-solving matter.",
+        about_p2: "I hold a degree in Computer Science from Singidunum University and have continued expanding my knowledge through IT Academy training. I'm communicative, fast to learn, and driven to keep growing professionally. Based in Belgrade, available locally or remotely.",
         exp_eyebrow: "/experience", exp_h2: "Experience",
-        tl1_period: "2023 — Present", tl1_role: "Senior Full-stack Developer", tl1_company: "Freelance / Remote",
-        tl1_desc: "Working independently with clients across Europe — designing systems, building APIs, and delivering production-ready web applications from spec to deployment.",
-        tl2_period: "2021 — 2023", tl2_role: "Full-stack Developer", tl2_company: "TechCo · Belgrade",
-        tl2_desc: "Built and maintained multiple client-facing web applications using React and Node.js. Led the migration of a legacy system to a modern microservices architecture.",
-        tl3_period: "2019 — 2021", tl3_role: "Junior Developer", tl3_company: "Startup Studio · Belgrade",
-        tl3_desc: "Joined a small product team building SaaS tools. Responsible for frontend development and REST API integrations. First exposure to CI/CD pipelines and Docker.",
-        tl4_period: "2015 — 2019", tl4_role: "BSc Computer Science", tl4_company: "University of Belgrade",
-        tl4_desc: "Graduated with a focus on software engineering and distributed systems.",
+        tl1_period: "2023 — 2024", tl1_role: "Logistics Coordinator", tl1_company: "AKKompresor · Belgrade",
+        tl1_desc: "Managed logistics operations and coordinated procurement processes and supply chain activities.",
+        tl2_period: "2022", tl2_role: "Printer Service Technician", tl2_company: "Malex Copy Service Center · Belgrade",
+        tl2_desc: "Diagnostics and repair of Canon, Lexmark, HP, and other printer and copier brands.",
+        tl3_period: "2018 — 2021", tl3_role: "IT Support Specialist", tl3_company: "University Clinical Center of Serbia · Belgrade",
+        tl3_desc: "End-user support, hardware and network maintenance across a large hospital environment. Kept critical systems operational 24/7.",
+        tl4_period: "2015 — 2017", tl4_role: "IT Help Desk Technician", tl4_company: "Milsped · Nestle · UniCredit Bank · KBCnet",
+        tl4_desc: "Hardware and software troubleshooting and end-user support across multiple corporate and banking clients.",
+        tl5_period: "2018 — 2019", tl5_role: "IT Training", tl5_company: "IT Academy · Belgrade",
+        tl5_desc: "Advanced professional training in IT systems, networking, and support.",
+        tl6_period: "2013", tl6_role: "BSc Computer Science", tl6_company: "Faculty of Computing, Singidunum University · Belgrade",
+        tl6_desc: "Graduated with a focus on software engineering, web development, and information systems.",
         skills_eyebrow: "/skills", skills_h2: "Skills &amp; tools",
-        skills_cat1: "Languages &amp; frameworks", skills_cat2: "Databases &amp; infrastructure", skills_cat3: "Tools &amp; practices",
-        proj_eyebrow: "/projects", proj_h2: "Selected projects",
-        proj1_title: "Order management platform",
-        proj1_desc: "An internal system for tracking orders and inventory in real time, with a dashboard for the support team.",
-        proj2_title: "Booking API",
-        proj2_desc: "A REST API connecting the booking system with external partners, built with stability and scalability in mind.",
-        proj3_title: "Customer portal redesign",
-        proj3_desc: "A modernization of an existing application — a new component architecture and a 40% performance improvement.",
-        proj_link: 'View project <span>→</span>',
+        skills_cat1: "Programming &amp; Web", skills_cat2: "Systems &amp; Tools", skills_cat3: "Hardware &amp; Other",
         contact_eyebrow: "/contact", contact_h2: "Let's talk",
-        contact_p: "I'm open to new projects, collaborations, and conversations about ideas. The fastest way to reach me is by email — I usually reply within the day.",
-        footer_copy: "© 2026 Viktor · Belgrade, Serbia",
+        contact_p: "Open to new opportunities, collaborations, and conversations. The fastest way to reach me is by email — I usually reply within the day.",
+        footer_copy: "© 2026 Viktor Pavlicek · Belgrade, Serbia",
         footer_tag: "Designed and built with attention to detail.",
       },
       sr: {
-        meta_desc: "Viktor, full-stack developer iz Beograda. Portfolio, veštine i kontakt.",
-        nav_about: "O meni", nav_exp: "Iskustvo", nav_skills: "Veštine", nav_projects: "Projekti", nav_contact: "Kontakt",
-        hero_eyebrow: "// softverski inženjer",
-        hero_h1: 'Razvijam softver koji <span class="accent-text">rešava prave probleme.</span>',
-        hero_lead: "Ja sam Viktor, full-stack developer iz Beograda. Gradim brze, pouzdane web aplikacije — od baze podataka do interfejsa koji ljudi zaista koriste.",
-        hero_btn_projects: "Pogledaj projekte", hero_btn_contact: "Kontaktiraj me",
-        hero_btn_cv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Preuzmi CV',
-        meta_role_label: "uloga", meta_role_value: "Full-stack Developer",
+        meta_desc: "Viktor Pavlicek, IT specijalista iz Beograda. Vestine, iskustvo i kontakt.",
+        nav_about: "O meni", nav_exp: "Iskustvo", nav_skills: "Vestine", nav_contact: "Kontakt",
+        hero_eyebrow: "// it specijalista",
+        hero_h1: 'IT profesionalac koji <span class="accent-text">odrzava sisteme u pogonu.</span>',
+        hero_lead: "Ja sam Viktor, IT specijalista iz Beograda sa iskustvom u Help Desk podrski, odrzavanju infrastrukture i servisiranju hardvera u korporativnom, bankarskom i zdravstvenom okruzenju.",
+        hero_btn_exp: "Pogledaj iskustvo", hero_btn_contact: "Kontaktiraj me", hero_btn_cv: "Preuzmi CV",
+        meta_role_label: "uloga", meta_role_value: "IT Specijalista",
         meta_loc_label: "lokacija", meta_loc_value: "Beograd, Srbija",
-        meta_status_label: "status", meta_status_value: "Dostupan za projekte",
-        meta_stack_label: "stek",
+        meta_status_label: "status", meta_status_value: "Otvoren za prilike",
+        meta_stack_label: "oblast", meta_stack_value: "Help Desk · IT Podrska · Logistika",
         about_eyebrow: "/o-meni", about_h2: "O meni",
-        about_p1: "Bavim se razvojem softvera već nekoliko godina, sa fokusom na web aplikacije koje moraju da rade pouzdano i pod opterećenjem. Najviše uživam u trenutku kada se dobra arhitektura na papiru pretvori u proizvod koji ljudi svakodnevno koriste.",
-        about_p2: "Radio sam i kao deo malih timova i samostalno — od ideje i tehničke specifikacije, preko razvoja, do isporuke i održavanja u produkciji. Trenutno sam baziran u Beogradu i otvoren za saradnju, bilo lokalno ili remote.",
+        about_p1: "IT profesionalac sa prakticnim iskustvom u Help Desk podrski, administraciji sistema, servisiranju hardvera i koordinaciji logistike. Radio sam u zahtevnim okruzenjima — od velikih bolnica do medjunarodnih banaka.",
+        about_p2: "Diplomirani sam na Fakultetu za racunarske nauke Univerziteta Singidunum, a znanje sam prosirио kroz IT Akademiju. Komunikativan sam, brzo ucim i zelje za napredovanjem. Baziran u Beogradu, dostupan lokalno ili remote.",
         exp_eyebrow: "/iskustvo", exp_h2: "Iskustvo",
-        tl1_period: "2023 — danas", tl1_role: "Senior Full-stack Developer", tl1_company: "Freelance / Remote",
-        tl1_desc: "Radim samostalno sa klijentima širom Evrope — dizajniram sisteme, gradim API-je i isporučujem web aplikacije od specifikacije do produkcije.",
-        tl2_period: "2021 — 2023", tl2_role: "Full-stack Developer", tl2_company: "TechCo · Beograd",
-        tl2_desc: "Gradio i održavao web aplikacije koristeći React i Node.js. Vodio migraciju legacy sistema na modernu mikroservisnu arhitekturu.",
-        tl3_period: "2019 — 2021", tl3_role: "Junior Developer", tl3_company: "Startup Studio · Beograd",
-        tl3_desc: "Pridružio se malom product timu koji gradi SaaS alate. Odgovoran za frontend razvoj i REST API integracije. Prva iskustva sa CI/CD pipeline-ima i Dockerom.",
-        tl4_period: "2015 — 2019", tl4_role: "BSc Računarstvo i informatika", tl4_company: "Univerzitet u Beogradu",
-        tl4_desc: "Diplomirao sa fokusom na softversko inženjerstvo i distribuirane sisteme.",
-        skills_eyebrow: "/veštine", skills_h2: "Veštine i alati",
-        skills_cat1: "Jezici i frameworki", skills_cat2: "Baze i infrastruktura", skills_cat3: "Alati i prakse",
-        proj_eyebrow: "/projekti", proj_h2: "Izabrani projekti",
-        proj1_title: "Platforma za upravljanje narudžbinama",
-        proj1_desc: "Interni sistem za praćenje narudžbina i zaliha u realnom vremenu, sa dashboard-om za tim podrške.",
-        proj2_title: "API za rezervacije",
-        proj2_desc: "REST API koji povezuje sistem rezervacija sa spoljnim partnerima, sa fokusom na stabilnost i skalabilnost.",
-        proj3_title: "Redizajn korisničkog portala",
-        proj3_desc: "Modernizacija postojeće aplikacije — nova arhitektura komponenti i unapređenje performansi za 40%.",
-        proj_link: 'Pogledaj projekat <span>→</span>',
+        tl1_period: "2023 — 2024", tl1_role: "Logisticar", tl1_company: "AKKompresor · Beograd",
+        tl1_desc: "Upravljanje logistikom i koordinacija nabavnih procesa i lanca snabdevanja.",
+        tl2_period: "2022", tl2_role: "Serviser stampaca", tl2_company: "Malex Copy Service Centar · Beograd",
+        tl2_desc: "Dijagnostika i popravka Canon, Lexmark, HP i drugih brendova stampaca i kopir aparata.",
+        tl3_period: "2018 — 2021", tl3_role: "IT Support Specijalista", tl3_company: "Univerzitetski Klnicki Centar Srbije · Beograd",
+        tl3_desc: "Podrska korisnicima, odrzavanje hardvera i mreze u bolnickom okruzenju. Ocuvanje kriticnih sistema u radu 24/7.",
+        tl4_period: "2015 — 2017", tl4_role: "IT Help Desk Tehnicar", tl4_company: "Milsped · Nestle · UniCredit Banka · KBCnet",
+        tl4_desc: "Resavanje hardverskih i softverskih problema i podrska krajnjim korisnicima u vise korporativnih i bankarskih klijenata.",
+        tl5_period: "2018 — 2019", tl5_role: "IT Obuka", tl5_company: "IT Akademija · Beograd",
+        tl5_desc: "Napredna strucna obuka iz IT sistema, umrezavanja i podrske.",
+        tl6_period: "2013", tl6_role: "Diplomirani informaticар", tl6_company: "Fakultet za racunarske nauke, Univ. Singidunum · Beograd",
+        tl6_desc: "Diplomirao sa fokusom na softversko inzenjerstvo, web razvoj i informacione sisteme.",
+        skills_eyebrow: "/vestine", skills_h2: "Vestine i alati",
+        skills_cat1: "Programiranje i Web", skills_cat2: "Sistemi i alati", skills_cat3: "Hardver i ostalo",
         contact_eyebrow: "/kontakt", contact_h2: "Hajde da razgovaramo",
-        contact_p: "Otvoren sam za nove projekte, saradnju i razgovore o idejama. Najbrži način da me kontaktujete je mejlom — odgovaram obično u toku dana.",
-        footer_copy: "© 2026 Viktor · Beograd, Srbija",
-        footer_tag: "Dizajnirano i razvijeno sa pažnjom na detalje.",
+        contact_p: "Otvoren za nove prilike, saradnju i razgovore. Najbrzi nacin da me kontaktujete je mejlom — odgovaram obicno u toku dana.",
+        footer_copy: "© 2026 Viktor Pavlicek · Beograd, Srbija",
+        footer_tag: "Dizajnirano i razvijeno sa paznjom na detalje.",
       }
     };
 
@@ -1218,5 +532,4 @@
     applyLang('en');
   </script>
 </body>
-
 </html>
