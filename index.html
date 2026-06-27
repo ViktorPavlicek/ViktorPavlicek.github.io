@@ -170,13 +170,60 @@
     .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag-list li { font-family: var(--font-mono); font-size: .84rem; padding: 7px 12px; background: var(--navy-surface); border: 1px solid var(--line); border-radius: 6px; color: var(--ink); }
 
-    .kontakt-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    /* CONTACT */
+    .kontakt-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
     .kontakt-grid p { color: var(--slate); max-width: 48ch; font-size: 1.02rem; }
-    .kontakt-links { display: flex; flex-direction: column; gap: 12px; }
-    .contact-link { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; background: var(--navy-surface); border: 1px solid var(--line); border-radius: var(--radius); font-family: var(--font-mono); font-size: .92rem; transition: border-color .2s ease, transform .2s ease; }
+    .kontakt-links { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .contact-link { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: var(--navy-surface); border: 1px solid var(--line); border-radius: var(--radius); font-family: var(--font-mono); font-size: .88rem; transition: border-color .2s ease, transform .2s ease; }
     .contact-link:hover { border-color: var(--indigo); transform: translateX(3px); }
     .contact-link .label { color: var(--slate); }
     .contact-link .value { color: var(--ink); font-weight: 500; }
+
+    /* CONTACT FORM */
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label { font-family: var(--font-mono); font-size: .76rem; color: var(--slate); letter-spacing: .06em; text-transform: lowercase; }
+    .form-field input,
+    .form-field textarea {
+      background: var(--navy-surface);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: .94rem;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color .2s ease, background .2s ease;
+      resize: none;
+      width: 100%;
+    }
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--indigo); }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--line); }
+    .btn-send {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 24px; border-radius: 7px; font-size: .92rem; font-weight: 600;
+      background: var(--indigo); color: #fff; border: none; cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+      font-family: var(--font-body); align-self: flex-start;
+    }
+    .btn-send:hover { background: var(--violet-light); transform: translateY(-1px); }
+    .btn-send svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .form-success {
+      display: none; padding: 16px 20px;
+      background: rgba(74,222,128,0.07);
+      border: 1px solid rgba(74,222,128,0.22);
+      border-radius: 8px; color: #4ade80;
+      font-family: var(--font-mono); font-size: .88rem; line-height: 1.5;
+    }
+    .form-error {
+      display: none; padding: 16px 20px;
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.22);
+      border-radius: 8px; color: #f87171;
+      font-family: var(--font-mono); font-size: .88rem;
+    }
 
     .site-footer { padding: 0; border-top: 1px solid var(--line); }
     .footer-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px; font-size: .84rem; color: var(--slate); height: 68px; }
@@ -390,22 +437,59 @@
         <div>
           <p class="eyebrow" data-i18n="contact_eyebrow">/contact</p>
           <h2 data-i18n="contact_h2">Let's talk</h2>
-          <p data-i18n="contact_p">Open to new opportunities, collaborations, and conversations. The fastest way to reach me is by email — I usually reply within the day.</p>
+          <p data-i18n="contact_p">Open to new opportunities, collaborations, and conversations. Fill out the form and I'll get back to you within the day.</p>
+          <div class="kontakt-links">
+            <a href="https://github.com/" class="contact-link" target="_blank" rel="noopener">
+              <span class="label">github</span><span class="value">@ViktorPavlicek</span>
+            </a>
+            <a href="https://linkedin.com/" class="contact-link" target="_blank" rel="noopener">
+              <span class="label">linkedin</span><span class="value">in/viktor</span>
+            </a>
+            <a href="https://instagram.com/vixon.93" class="contact-link" target="_blank" rel="noopener">
+              <span class="label">instagram</span><span class="value">@vixon.93</span>
+            </a>
+          </div>
         </div>
-        <div class="kontakt-links">
-          <a href="mailto:viktorpavlicek@ymail.com" class="contact-link">
-            <span class="label">email</span><span class="value">viktorpavlicek@ymail.com</span>
-          </a>
-          <a href="https://github.com/" class="contact-link" target="_blank" rel="noopener">
-            <span class="label">github</span><span class="value">@ViktorPavlicek</span>
-          </a>
-          <a href="https://linkedin.com/" class="contact-link" target="_blank" rel="noopener">
-            <span class="label">linkedin</span><span class="value">in/viktor</span>
-          </a>
-          <a href="https://instagram.com/vixon.93" class="contact-link" target="_blank" rel="noopener">
-            <span class="label">instagram</span><span class="value">@vixon.93</span>
-          </a>
+
+        <!-- ================================================
+             FORMSPREE SETUP — 3 koraka:
+             1. Idi na https://formspree.io i registruj se (besplatno)
+             2. Klikni "New Form", unesi naziv i tvoj email
+             3. Zameni YOUR_FORM_ID u action atributu ispod sa svojim ID-em
+                Primer: action="https://formspree.io/f/xyzabc12"
+             ================================================ -->
+        <div>
+          <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+          >
+            <div class="form-field">
+              <label for="cf-name" data-i18n="form_name_label">ime</label>
+              <input type="text" id="cf-name" name="name" placeholder="Viktor Pavlicek" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-email" data-i18n="form_email_label">email</label>
+              <input type="email" id="cf-email" name="email" placeholder="vas@email.com" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-msg" data-i18n="form_msg_label">poruka</label>
+              <textarea id="cf-msg" name="message" rows="5" placeholder="Zdravo, zanima me..." required></textarea>
+            </div>
+            <button type="submit" class="btn-send">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span data-i18n="form_btn">Send message</span>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess" data-i18n="form_success">
+            ✓ Poruka poslata — odgovorim obično u toku dana.
+          </div>
+          <div class="form-error" id="formError" data-i18n="form_error">
+            Nešto nije prošlo. Pokušaj ponovo ili me kontaktiraj direktno.
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -449,9 +533,12 @@
         skills_eyebrow: "/skills", skills_h2: "Skills &amp; tools",
         skills_cat1: "Programming &amp; Web", skills_cat2: "Systems &amp; Tools", skills_cat3: "Hardware &amp; Other",
         contact_eyebrow: "/contact", contact_h2: "Let's talk",
-        contact_p: "Open to new opportunities, collaborations, and conversations. The fastest way to reach me is by email — I usually reply within the day.",
+        contact_p: "Open to new opportunities, collaborations, and conversations. Fill out the form and I'll get back to you within the day.",
+        form_name_label: "name", form_email_label: "email", form_msg_label: "message",
+        form_btn: "Send message",
+        form_success: "✓ Message sent — I usually reply within the day.",
+        form_error: "Something went wrong. Please try again.",
         footer_copy: "© 2026 Viktor Pavlicek · Belgrade, Serbia",
-        footer_tag: "Designed and built with attention to detail.",
       },
       sr: {
         meta_desc: "Viktor Pavlicek, IT specijalista iz Beograda. Vestine, iskustvo i kontakt.",
@@ -483,9 +570,12 @@
         skills_eyebrow: "/vestine", skills_h2: "Vestine i alati",
         skills_cat1: "Programiranje i Web", skills_cat2: "Sistemi i alati", skills_cat3: "Hardver i ostalo",
         contact_eyebrow: "/kontakt", contact_h2: "Hajde da razgovaramo",
-        contact_p: "Otvoren za nove prilike, saradnju i razgovore. Najbrzi nacin da me kontaktujete je mejlom — odgovaram obicno u toku dana.",
+        contact_p: "Otvoren za nove prilike, saradnju i razgovore. Popuni formu i javicu ti se u toku dana.",
+        form_name_label: "ime", form_email_label: "email", form_msg_label: "poruka",
+        form_btn: "Posalji poruku",
+        form_success: "✓ Poruka poslata — odgovorim obicno u toku dana.",
+        form_error: "Nesto nije proslo. Pokusaj ponovo.",
         footer_copy: "© 2026 Viktor Pavlicek · Beograd, Srbija",
-        footer_tag: "Dizajnirano i razvijeno sa paznjom na detalje.",
       }
     };
 
@@ -527,6 +617,36 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Contact form — Formspree AJAX submit
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('.btn-send');
+        btn.disabled = true;
+        btn.style.opacity = '.6';
+        document.getElementById('formSuccess').style.display = 'none';
+        document.getElementById('formError').style.display = 'none';
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+          } else {
+            throw new Error('not ok');
+          }
+        } catch {
+          document.getElementById('formError').style.display = 'block';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }
+      });
+    }
 
     applyLang('en');
   </script>
