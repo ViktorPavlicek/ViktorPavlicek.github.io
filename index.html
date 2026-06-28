@@ -466,16 +466,16 @@
             method="POST"
           >
             <div class="form-field">
-              <label for="cf-name" data-i18n="form_name_label">ime</label>
-              <input type="text" id="cf-name" name="name" placeholder="Viktor Pavlicek" required>
+              <label for="cf-name" data-i18n="form_name_label">name</label>
+              <input type="text" id="cf-name" name="name" data-i18n-placeholder="form_name_ph" placeholder="Your name" required>
             </div>
             <div class="form-field">
               <label for="cf-email" data-i18n="form_email_label">email</label>
-              <input type="email" id="cf-email" name="email" placeholder="vas@email.com" required>
+              <input type="email" id="cf-email" name="email" data-i18n-placeholder="form_email_ph" placeholder="your@email.com" required>
             </div>
             <div class="form-field">
-              <label for="cf-msg" data-i18n="form_msg_label">poruka</label>
-              <textarea id="cf-msg" name="message" rows="5" placeholder="Zdravo, zanima me..." required></textarea>
+              <label for="cf-msg" data-i18n="form_msg_label">message</label>
+              <textarea id="cf-msg" name="message" rows="5" data-i18n-placeholder="form_msg_ph" placeholder="Hello, I'm interested in..." required></textarea>
             </div>
             <button type="submit" class="btn-send">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -535,6 +535,7 @@
         contact_eyebrow: "/contact", contact_h2: "Let's talk",
         contact_p: "Open to new opportunities, collaborations, and conversations. Fill out the form and I'll get back to you within the day.",
         form_name_label: "name", form_email_label: "email", form_msg_label: "message",
+        form_name_ph: "Your name", form_email_ph: "your@email.com", form_msg_ph: "Hello, I'm interested in...",
         form_btn: "Send message",
         form_success: "✓ Message sent — I usually reply within the day.",
         form_error: "Something went wrong. Please try again.",
@@ -572,6 +573,7 @@
         contact_eyebrow: "/kontakt", contact_h2: "Hajde da razgovaramo",
         contact_p: "Otvoren za nove prilike, saradnju i razgovore. Popuni formu i javicu ti se u toku dana.",
         form_name_label: "ime", form_email_label: "email", form_msg_label: "poruka",
+        form_name_ph: "Vase ime", form_email_ph: "vas@email.com", form_msg_ph: "Zdravo, zanima me...",
         form_btn: "Posalji poruku",
         form_success: "✓ Poruka poslata — odgovorim obicno u toku dana.",
         form_error: "Nesto nije proslo. Pokusaj ponovo.",
@@ -586,6 +588,10 @@
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key] != null) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key] != null) el.placeholder = dict[key];
       });
       document.getElementById('langSelect').value = lang;
     }
